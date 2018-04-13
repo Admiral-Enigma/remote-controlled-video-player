@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Admiral-Enigma/remote-controlled-video-player/issues"
   },
-  "homepage": "https://github.com/Admiral-Enigma/remote-controlled-video-player#readme"
+  "homepage": "https://github.com/Admiral-Enigma/remote-controlled-video-player#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.1.0"
+  }
 }
