@@ -1,0 +1,19 @@
+{
+  "name": "remote-controlled-video-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Admiral-Enigma/remote-controlled-video-player.git"
+  },
+  "author": "Lord Squirrel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Admiral-Enigma/remote-controlled-video-player/issues"
+  },
+  "homepage": "https://github.com/Admiral-Enigma/remote-controlled-video-player#readme"
+}
