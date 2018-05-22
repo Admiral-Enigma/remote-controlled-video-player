@@ -19,17 +19,13 @@ io.on('connection', function (socket) {
   socket.on('getClients', function () {
     socket.emit('clients', Object.keys(io.sockets.sockets).length)
   })
-
   socket.on('startVideo', function () {
     console.log('started video');
-    socket.emit('startTheVideo')
+    io.emit('startTheVideo')
   })
 
+  io.emit('hello')
   socket.on('started', function () {
     console.log('video started');
   })
-
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
 });

@@ -3,28 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Video</title>
-    <link href="https://vjs.zencdn.net/7.0.2/video-js.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/main.css">
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
-    <script src="https://vjs.zencdn.net/7.0.2/video.js"></script>
-
-    <video id="my-video" class="video-js" preload="auto" width="1440" height="900"
-    data-setup="{}">
-      <source src="sygmeme.mp4" type='video/mp4'>
-      <p class="vjs-no-js">
-        To view this video please enable JavaScript, and consider upgrading to a web browser that
-        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-      </p>
+    <video id="video" width="1280" height="720" poster="https://sagamer.co.za/wp-content/uploads/2015/03/loading-please-wait.png">
+      <source src="sygmeme.mp4" type="video/mp4">
+      Your browser sucks
     </video>
+
     <script>
-    var socket = io.connect();
-    var player = videojs('my-video_html5_api')
-    player.play()
-    socket.on('startTheVideo', function () {
+    var socket = io();
+    var video = document.getElementById('video')
+
+    socket.on('hello', function () {
         console.log('yall');
     });
+    socket.on('startTheVideo', function () {
+      play()
+    });
+
+    function play() {
+      video.play().then(() => {
+        socket.emit('started')
+      })
+    }
+
 
     </script>
   </body>

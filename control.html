@@ -10,7 +10,7 @@
     <p id="clients">Connected clients: 0</p>
     <button onclick="startVideo()">Start</button>
     <script>
-      var socket = io.connect();
+      var socket = io();
       socket.on('start', function (data) {
         console.log(data);
       });
@@ -20,6 +20,10 @@
       function startVideo() {
         socket.emit('startVideo')
       }
+
+      socket.on('startTheVideo', function () {
+        console.log('video started');
+      })
       setInterval(function () {
         socket.emit('getClients')
       }, 1000)
